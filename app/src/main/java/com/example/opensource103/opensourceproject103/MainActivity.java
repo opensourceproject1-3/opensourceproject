@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
 public class MainActivity extends AppCompatActivity implements AutoPermissionsListener {
 
     Button button;
+    Button marketListButton;
+    Button searchButton;
     ImageButton button2;
 
     @Override
@@ -33,6 +35,24 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
             }
         });
 
+        marketListButton = findViewById(R.id.activity_main_button2);
+        marketListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MarketList.class);
+                startActivity(intent);
+            }
+        });
+
+        searchButton = findViewById(R.id.activity_main_button3);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Search.class);
+                startActivity(intent);
+            }
+        });
+
         button2 = findViewById(R.id.imageButton);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,9 +62,7 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
             }
         });
 
-
         AutoPermissions.Companion.loadAllPermissions(this, 101);
-
     }
 
     @Override
