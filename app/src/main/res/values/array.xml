@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="resId">
+        <item>@drawable/market_logo</item>
+    </integer-array>
+
+    <string-array name="title">
+        <item>복대가경시장</item>
+    </string-array>
+
+    <string-array name="content">
+        <item>복대가경시장입니다.</item>
+    </string-array>
+</resources>
