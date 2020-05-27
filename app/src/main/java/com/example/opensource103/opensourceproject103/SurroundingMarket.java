@@ -29,6 +29,12 @@ public class SurroundingMarket extends AppCompatActivity {
     SupportMapFragment mapFragment;
     GoogleMap map;
 
+    String[] marketList = {"복대가경시장", "가경터미널시장", "육거리종합시장", "복대시장", "사창시장", "육거리전통시장", "운천시장", "북부시장", "청주평화시장", "두꺼비시장"};
+    LatLng[] locations = {new LatLng(36.629597, 127.442793), new LatLng(36.628008, 127.435827), new LatLng(36.629256, 127.488305),
+            new LatLng(36.635479, 127.448743), new LatLng(36.634342, 127.464149), new LatLng(36.628735, 127.491352),
+            new LatLng(36.647432, 127.466472), new LatLng(36.648779, 127.485952), new LatLng(36.655784, 127.482862),
+            new LatLng(36.618934, 127.472391)};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +88,16 @@ public class SurroundingMarket extends AppCompatActivity {
         map.addMarker(markerOptions);
     }
 
+    private void showMarketLocation() {
+        for (int i=0; i<marketList.length; i++) {
+            LatLng loc = locations[i];
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.title(marketList[i]);
+            markerOptions.position(loc);
+            map.addMarker(markerOptions);
+        }
+    }
+
     class GPSListener implements LocationListener {
 
         @Override
@@ -89,6 +105,7 @@ public class SurroundingMarket extends AppCompatActivity {
             Double latitude = location.getLatitude();
             Double longitude = location.getLongitude();
             showCurrentLocation(latitude, longitude);
+            showMarketLocation();
         }
 
         @Override
