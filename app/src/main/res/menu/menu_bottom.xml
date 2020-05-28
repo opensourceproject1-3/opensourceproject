@@ -3,17 +3,17 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@null" />
+        android:title="홈" />
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_search_black_24dp"
-        android:title="@null" />
+        android:title="검색" />
     <item
         android:id="@+id/gps"
         android:icon="@drawable/ic_gps_fixed_black_24dp"
-        android:title="@null" />
+        android:title="내 위치" />
     <item
         android:id="@+id/me"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="@null" />
+        android:title="내 정보" />
 </menu>

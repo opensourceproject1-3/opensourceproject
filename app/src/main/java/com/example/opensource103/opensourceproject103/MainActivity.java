@@ -2,8 +2,10 @@ package com.example.opensource103.opensourceproject103;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,50 +18,44 @@ import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity implements AutoPermissionsListener {
 
-    Button button;
-    Button marketListButton;
-    Button searchButton;
-    ImageButton button2;
+    HomeFragment homeFragment;
+    SearchFragment searchFragment;
+    GPSFragment gpsFragment;
+    MyInfoFragment myInfoFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.activity_main_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SurroundingMarket.class);
-                startActivity(intent);
-            }
-        });
+        homeFragment = new HomeFragment();
+        searchFragment = new SearchFragment();
+        gpsFragment = new GPSFragment();
+        myInfoFragment = new MyInfoFragment();
 
-        marketListButton = findViewById(R.id.activity_main_button2);
-        marketListButton.setOnClickListener(new View.OnClickListener() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MarketList.class);
-                startActivity(intent);
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                        return true;
+                    case R.id.search:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, searchFragment).commit();
+                        return true;
+                    case R.id.gps:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, gpsFragment).commit();
+                        return true;
+                    case R.id.me:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, myInfoFragment).commit();
+                        return true;
+                }
+                return false;
             }
-        });
 
-        searchButton = findViewById(R.id.activity_main_button3);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Search.class);
-                startActivity(intent);
-            }
-        });
-
-        button2 = findViewById(R.id.imageButton);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MarketList.class);
-                startActivity(intent);
-            }
         });
 
         AutoPermissions.Companion.loadAllPermissions(this, 101);
