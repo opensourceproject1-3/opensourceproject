@@ -12,3 +12,9 @@
 ## 200528 진행사항
 
 ![Screenshot from 2020-05-27 18-15-55](https://user-images.githubusercontent.com/43159295/83001289-7fc51a00-a046-11ea-9eac-b13522841c96.png)
+
+## 200604 진행사항
+
+![screenshot](./readmeimg/home1.png)
+
+![screenshot](./readmeimg/home2.png)
