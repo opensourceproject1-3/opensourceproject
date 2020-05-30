@@ -12,10 +12,7 @@
         android:id="@+id/imageView2"
         android:layout_width="318dp"
         android:layout_height="75dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="29dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:contentDescription="직지시장로고"
 
@@ -34,45 +31,42 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
 
                     <ImageView
                         android:id="@+id/notice_image3"
-                        android:layout_width="384dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:contentDescription="공지"
-
                         android:src="@drawable/notice4" />
 
                     <ImageView
                         android:id="@+id/notice_image2"
-                        android:layout_width="384dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:contentDescription="공지"
-
                         android:src="@drawable/notice3" />
 
                     <ImageView
                         android:id="@+id/notice_image"
-                        android:layout_width="384dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:contentDescription="공지"
-
                         android:src="@drawable/notice2" />
                 </LinearLayout>
             </HorizontalScrollView>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true" />
@@ -82,24 +76,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="23dp"
                 android:background="#F2E5CF"
                 android:gravity="center"
-                android:text="주변 시장 찾아보기"
-                android:textSize="18dp"
-                app:fontFamily="@font/batang_bold" />
 
-            <Button
-                android:id="@+id/activity_main_button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="23dp"
-                android:background="#F2E5CF"
-                android:gravity="center"
-                android:text="전체 시장 조회"
+                android:text="주변 시장 찾아보기"
                 android:textSize="18dp"
                 app:fontFamily="@font/batang_bold" />
 
@@ -110,16 +91,35 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true" />
 
-            <TableRow
+            <Button
+                android:id="@+id/activity_main_button2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginRight="23dp"
+                android:background="#F2E5CF"
+                android:gravity="center"
+                android:text="전체 시장 조회"
+                android:textSize="18dp"
+                app:fontFamily="@font/batang_bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="23dp"
-                    android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:contentDescription="축산"
                     android:scaleType="fitXY"
@@ -130,7 +130,6 @@
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:contentDescription="수산"
                     android:scaleType="fitXY"
@@ -141,21 +140,20 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true" />
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <ImageButton
                     android:id="@+id/imageButton3"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="23dp"
-                    android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:contentDescription="건어물"
                     android:scaleType="fitXY"
@@ -167,7 +165,6 @@
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:contentDescription="청과"
                     android:scaleType="fitXY"
@@ -177,22 +174,21 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true" />
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
 
                 <ImageButton
                     android:id="@+id/imageButton5"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="23dp"
-                    android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:contentDescription="견과"
                     android:scaleType="fitXY"
@@ -203,7 +199,6 @@
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:contentDescription="먹거리"
                     android:scaleType="fitXY"
@@ -214,7 +209,7 @@
             <Space
 
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true" />
@@ -224,7 +219,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="250dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/footer" />
 
@@ -235,3 +229,13 @@
 
 
 </RelativeLayout>
+
+
+<!--
+    개발 예정사항
+    1. 공지사항 db에서 정보 받아서 띄우기
+    2. 공지사항 각 사진 center
+    3. 공지사항 자동 스크롤 (3초)
+    4. 주문 카테고리 디테일과 연결
+
+ -->
