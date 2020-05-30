@@ -4,26 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="318dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:text="직지 장터"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="직지시장로고"
 
+        android:src="@drawable/logo" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="80dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +37,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -44,6 +46,8 @@
                         android:layout_width="384dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:contentDescription="공지"
+
                         android:src="@drawable/notice4" />
 
                     <ImageView
@@ -51,6 +55,8 @@
                         android:layout_width="384dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:contentDescription="공지"
+
                         android:src="@drawable/notice3" />
 
                     <ImageView
@@ -58,6 +64,8 @@
                         android:layout_width="384dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:contentDescription="공지"
+
                         android:src="@drawable/notice2" />
                 </LinearLayout>
             </HorizontalScrollView>
@@ -70,6 +78,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="23dp"
                 android:layout_marginRight="23dp"
+                app:fontFamily="@font/batang_bold"
                 android:text="주변 시장 찾아보기" />
 
             <Button
@@ -80,6 +89,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="23dp"
                 android:layout_marginRight="23dp"
+                app:fontFamily="@font/batang_bold"
                 android:text="전체 시장 조회" />
 
             <TableRow
@@ -94,6 +104,7 @@
                     android:layout_marginTop="10dp"
                     android:contentDescription="축산"
                     android:scaleType="fitXY"
+                    android:background="@android:color/white"
                     app:srcCompat="@drawable/meat" />
 
                 <ImageButton
@@ -104,6 +115,7 @@
                     android:layout_marginTop="10dp"
                     android:contentDescription="수산"
                     android:scaleType="fitXY"
+                    android:background="@android:color/white"
                     app:srcCompat="@drawable/fish" />
 
                 <ImageButton
@@ -114,6 +126,7 @@
                     android:layout_marginTop="10dp"
                     android:contentDescription="건어물"
                     android:scaleType="fitXY"
+                    android:background="@android:color/white"
                     app:srcCompat="@drawable/squid" />
 
             </TableRow>
@@ -130,7 +143,8 @@
                     android:layout_marginTop="10dp"
                     android:contentDescription="야채"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/carrot" />
+                    android:background="@android:color/white"
+                    app:srcCompat="@drawable/fruit" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
@@ -138,9 +152,10 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="19dp"
                     android:layout_marginTop="10dp"
-                    android:contentDescription="과일"
+                    android:contentDescription="견과"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/fruit" />
+                    android:background="@android:color/white"
+                    app:srcCompat="@drawable/nut" />
 
                 <ImageButton
                     android:id="@+id/imageButton6"
@@ -148,48 +163,25 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="19dp"
                     android:layout_marginTop="10dp"
-                    android:contentDescription="견과류"
+                    android:contentDescription="먹거리"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/nut" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <ImageButton
-                    android:id="@+id/imageButton7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="23dp"
-                    android:layout_marginTop="10dp"
-                    android:contentDescription="떡"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/ricecake" />
-
-                <ImageButton
-                    android:id="@+id/imageButton8"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginTop="10dp"
-                    android:contentDescription="반찬"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/salad" />
-
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginTop="10dp"
-                    android:contentDescription="음식"
-                    android:scaleType="fitXY"
+                    android:background="@android:color/white"
                     app:srcCompat="@drawable/food" />
 
             </TableRow>
+
+
         </LinearLayout>
     </ScrollView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginBottom="0dp" />
 
 </RelativeLayout>
