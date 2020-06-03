@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <ImageView
+            <ImageButton
                 android:id="@+id/notice_image"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
@@ -52,7 +52,7 @@
                 android:layout_marginTop="15dp"
                 android:src="@drawable/notice2"/>
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/notice_image2"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
@@ -60,7 +60,7 @@
                 android:layout_marginTop="15dp"
                 android:src="@drawable/notice3"/>
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/notice_image3"
                 android:layout_width="350dp"
                 android:layout_height="200dp"

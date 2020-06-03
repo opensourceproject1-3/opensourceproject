@@ -13,7 +13,9 @@ public class HomeFragment extends Fragment {
 
     Button button;
     Button marketListButton;
-    ImageButton button2;
+    ImageButton notice;
+    ImageButton notice2;
+    ImageButton notice3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,6 +39,36 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+        notice = rootView.findViewById(R.id.notice_image);
+        notice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Notice.class);
+                startActivity(intent);
+            }
+        });
+
+        notice2 = rootView.findViewById(R.id.notice_image2);
+        notice2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Notice.class);
+                startActivity(intent);
+            }
+        });
+
+        notice3 = rootView.findViewById(R.id.notice_image3);
+        notice3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Notice.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         return rootView;
     }
