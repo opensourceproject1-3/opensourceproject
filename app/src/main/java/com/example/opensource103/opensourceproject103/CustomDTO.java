@@ -5,6 +5,12 @@ public class CustomDTO {
     private String title;
     private String content;
 
+    CustomDTO(int resId, String title, String content) {
+        this.resId = resId;
+        this.title = title;
+        this.content = content;
+    }
+
     public int getResId() {
         return resId;
     }
