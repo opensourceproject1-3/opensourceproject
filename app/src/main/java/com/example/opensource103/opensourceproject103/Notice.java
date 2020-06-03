@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+
 public class Notice extends AppCompatActivity {
 
     private ImageButton notice;
@@ -19,9 +20,11 @@ public class Notice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice);
 
-        notice = (ImageButton)findViewById(R.id.notice_image);
-        notice2 = (ImageButton)findViewById(R.id.notice_image2);
-        notice3 = (ImageButton)findViewById(R.id.notice_image3);
+
+
+        notice = findViewById(R.id.notice_image);
+        notice2 = findViewById(R.id.notice_image2);
+        notice3 = findViewById(R.id.notice_image3);
 
         notice.setOnClickListener(new View.OnClickListener() {
             @Override
