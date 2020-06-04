@@ -1,14 +1,10 @@
 package com.example.opensource103.opensourceproject103;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.pedro.library.AutoPermissions;
@@ -20,8 +16,8 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
 
     HomeFragment homeFragment;
     SearchFragment searchFragment;
-    GPSFragment gpsFragment;
-    MyInfoFragment myInfoFragment;
+    MarketFragment gpsFragment;
+    FavoritesFragment myInfoFragment;
 
 
     @Override
@@ -31,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
 
         homeFragment = new HomeFragment();
         searchFragment = new SearchFragment();
-        gpsFragment = new GPSFragment();
-        myInfoFragment = new MyInfoFragment();
+        gpsFragment = new MarketFragment();
+        myInfoFragment = new FavoritesFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

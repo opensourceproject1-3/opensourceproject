@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 public class HomeFragment extends Fragment {
 
     Button button;
-    Button marketListButton;
     ImageButton notice;
     ImageButton notice2;
     ImageButton notice3;
@@ -30,16 +29,6 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        marketListButton = rootView.findViewById(R.id.activity_main_button2);
-        marketListButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MarketList.class);
-                startActivity(intent);
-            }
-        });
-
 
         notice = rootView.findViewById(R.id.notice_image);
         notice.setOnClickListener(new View.OnClickListener() {
