@@ -14,9 +14,6 @@ import android.widget.ViewFlipper;
 public class HomeFragment extends Fragment {
 
     Button button;
-    ImageButton notice;
-    ImageButton notice2;
-    ImageButton notice3;
 
     ViewFlipper viewFlipper;
 
