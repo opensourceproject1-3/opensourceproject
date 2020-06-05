@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
     MarketFragment gpsFragment;
     FavoritesFragment myInfoFragment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +64,11 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
 
     @Override
     public void onDenied(int i, @NotNull String[] strings) {
-        Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onGranted(int i, @NotNull String[] strings) {
-        Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
     }
 }
