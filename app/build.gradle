@@ -40,4 +40,7 @@ dependencies {
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.github.bumptech.glide:glide:4.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+
+    // 서버통신 관련 라이브러리 volley 설치
+    implementation 'com.android.volley:volley:1.1.1'
 }
