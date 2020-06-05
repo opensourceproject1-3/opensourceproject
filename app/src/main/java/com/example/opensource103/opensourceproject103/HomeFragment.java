@@ -8,19 +8,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 public class HomeFragment extends Fragment {
 
     Button button;
-    Button marketListButton;
-    ImageButton notice;
-    ImageButton notice2;
-    ImageButton notice3;
+
+    ViewFlipper viewFlipper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+
+        int images[] = {
+          R.drawable.notice2,
+          R.drawable.notice3,
+          R.drawable.notice4
+        };
 
         button = rootView.findViewById(R.id.activity_main_button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -31,18 +37,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        marketListButton = rootView.findViewById(R.id.activity_main_button2);
-        marketListButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MarketList.class);
-                startActivity(intent);
-            }
-        });
-
-
-        notice = rootView.findViewById(R.id.notice_image);
-        notice.setOnClickListener(new View.OnClickListener() {
+        viewFlipper = rootView.findViewById(R.id.image_slide);
+        viewFlipper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Notice.class);
@@ -50,26 +46,19 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        notice2 = rootView.findViewById(R.id.notice_image2);
-        notice2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Notice.class);
-                startActivity(intent);
-            }
-        });
-
-        notice3 = rootView.findViewById(R.id.notice_image3);
-        notice3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Notice.class);
-                startActivity(intent);
-            }
-        });
-
-
+        for (int image : images) {
+            flipperImages(image);
+        }
 
         return rootView;
+    }
+
+    private void flipperImages(int image) {
+        ImageView imageView = new ImageView(getActivity());
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(3000);
+        viewFlipper.setAutoStart(true);
     }
 }
