@@ -1,6 +1,8 @@
 package com.example.opensource103.opensourceproject103;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -17,14 +19,17 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.pedro.library.AutoPermissions;
 import com.pedro.library.AutoPermissionsListener;
 
 import org.jetbrains.annotations.NotNull;
 
-public class SurroundingMarket extends AppCompatActivity {
+public class SurroundingMarket extends AppCompatActivity implements GoogleMap.OnMarkerClickListener {
 
     SupportMapFragment mapFragment;
     GoogleMap map;
@@ -45,6 +50,8 @@ public class SurroundingMarket extends AppCompatActivity {
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 map = googleMap;
+                map.setOnMarkerClickListener(SurroundingMarket.this);
+                showMarketLocation();
             }
         });
 
@@ -94,8 +101,20 @@ public class SurroundingMarket extends AppCompatActivity {
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.title(marketList[i]);
             markerOptions.position(loc);
+            markerOptions.snippet("설명");
+
+            BitmapDrawable bitmap = (BitmapDrawable) getResources().getDrawable(R.drawable.market_location);
+            Bitmap b = bitmap.getBitmap();
+            Bitmap marketMarker = Bitmap.createScaledBitmap(b, 100, 100, false);
+            markerOptions.icon(BitmapDescriptorFactory.fromBitmap(marketMarker));
             map.addMarker(markerOptions);
         }
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(this,  marker.getId() + marker.getPosition(), Toast.LENGTH_SHORT).show();
+        return false;
     }
 
     class GPSListener implements LocationListener {
@@ -105,7 +124,7 @@ public class SurroundingMarket extends AppCompatActivity {
             Double latitude = location.getLatitude();
             Double longitude = location.getLongitude();
             showCurrentLocation(latitude, longitude);
-            showMarketLocation();
+            // showMarketLocation();
         }
 
         @Override

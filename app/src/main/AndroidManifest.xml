@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MarketList"></activity>
+        <activity android:name=".CategoryActivity"></activity>
+        <activity android:name=".MarketList" />
 
         <uses-library android:name="com.google.android.maps" />
         <uses-library

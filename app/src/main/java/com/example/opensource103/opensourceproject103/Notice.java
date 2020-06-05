@@ -20,8 +20,6 @@ public class Notice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice);
 
-
-
         notice = findViewById(R.id.notice_image);
         notice2 = findViewById(R.id.notice_image2);
         notice3 = findViewById(R.id.notice_image3);
