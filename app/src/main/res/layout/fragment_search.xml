@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:layout_gravity="center">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="30dp"
+            android:hint="가게명 검색"
+            android:fontFamily="@font/batang_bold"
+            android:textColorHint="#BDBDBD"
+            android:textSize="20dp" />
 
-    <ImageButton
-        android:id="@+id/goback"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_arrow_back_black_24dp" />
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_search_black_24dp" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/Edittext"
-        android:layout_width="330dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:hint="메뉴명, 가게명 검색"
-        android:fontFamily="@font/batang_bold"
-        android:textColorHint="#BDBDBD"
-        android:textSize="20dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_recyclerview"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <ImageButton
-        android:id="@+id/search"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:scaleType="fitXY"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_search_black_24dp" />
 
 </LinearLayout>
