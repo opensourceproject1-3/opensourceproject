@@ -22,10 +22,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".CategoryActivity"/>
-        <activity android:name=".MarketList" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MarketMap"></activity>
+        <activity android:name=".CategoryActivity" />
 
         <uses-library android:name="com.google.android.maps" />
         <uses-library
@@ -42,19 +42,15 @@
         <activity android:name=".SurroundingMarket" />
         <activity android:name=".Notice" />
         <activity android:name=".MainActivity" />
-
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity"/>
-
-
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>
