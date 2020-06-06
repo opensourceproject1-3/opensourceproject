@@ -24,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MarketMap"></activity>
+        <activity android:name=".ProductActivity"></activity>
+        <activity android:name=".MarketMap" />
         <activity android:name=".CategoryActivity" />
 
         <uses-library android:name="com.google.android.maps" />
