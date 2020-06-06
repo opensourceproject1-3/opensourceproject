@@ -16,7 +16,6 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:contentDescription="직지시장로고"
-
         android:src="@drawable/logo" />
 
     <LinearLayout
@@ -39,10 +38,9 @@
         android:textStyle="bold"
         android:textSize="25dp"/>
 
-
-    <ListView
-        android:id="@+id/makert_listview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/market_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -16,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ImageView iv = (ImageView)findViewById(R.id.gif_image);
         Glide.with(this).load(R.raw.intro).into(iv);
+
         TestStoreReqeust task = new TestStoreReqeust();
         startLoading();
     }
