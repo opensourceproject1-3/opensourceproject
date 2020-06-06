@@ -1,6 +1,7 @@
 package com.example.opensource103.opensourceproject103;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -49,6 +50,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
         TextView storeName;
         TextView storeTime;
         TextView storeCategory;
+        ImageView favorite;
         RelativeLayout storeContainer;
 
         public ViewHolder(@NonNull View itemView) {
@@ -58,6 +60,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
             storeTime = itemView.findViewById(R.id.store_time);
             storeCategory = itemView.findViewById(R.id.store_category);
             storeContainer = itemView.findViewById(R.id.store_container);
+            favorite = itemView.findViewById(R.id.store_favorite);
         }
 
         public void setItem(final StoreModel item) {
@@ -83,7 +86,16 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), ProductActivity.class);
                     intent.putExtra("storeID", item.getStoreID());
+                    intent.putExtra("storeName", item.getStoreName());
                     v.getContext().startActivity(intent);
+                }
+            });
+
+            favorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 즐겨찾기 로컬 db 저장
+
                 }
             });
 
