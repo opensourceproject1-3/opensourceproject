@@ -18,6 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         Glide.with(this).load(R.raw.intro).into(iv);
 
         StoreReqeust task = new StoreReqeust();
+        ProductReqeust task2 = new ProductReqeust();
         startLoading();
     }
 

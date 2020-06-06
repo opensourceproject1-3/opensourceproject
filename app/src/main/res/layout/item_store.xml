@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/store_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -7,8 +8,8 @@
     <ImageView
         android:id="@+id/store_image"
         android:src="@drawable/mini_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
 
     <LinearLayout
         android:id="@+id/store_contents"
@@ -23,12 +24,12 @@
             android:id="@+id/store_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="이름"
-            android:textSize="30dp" />
+            android:textSize="20dp" />
 
         <LinearLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -42,7 +43,7 @@
                 android:id="@+id/store_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:text="카테고리"/>
 
         </LinearLayout>
@@ -50,9 +51,10 @@
 
     <ImageView
         android:id="@+id/store_favorite"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="25dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/default_star"
         android:layout_alignParentRight="true" />
 
