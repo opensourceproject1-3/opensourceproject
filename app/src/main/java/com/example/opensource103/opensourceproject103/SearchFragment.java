@@ -39,11 +39,11 @@ public class SearchFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.search_recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        storeAdapter = new StoreAdapter();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                storeAdapter = new StoreAdapter();
                 setData();
                 recyclerView.setAdapter(storeAdapter);
             }
