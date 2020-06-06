@@ -26,6 +26,7 @@
 
     <EditText
         android:id="@+id/et_id"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
@@ -43,13 +44,12 @@
 
     <EditText
         android:id="@+id/et_pass"
-        android:layout_width="0dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="비밀번호"
         android:inputType="textPersonName"
-
         android:textSize="20dp"
         app:fontFamily="@font/batang_bold"
         app:layout_constraintEnd_toEndOf="@+id/et_id"
@@ -58,7 +58,7 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="0dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="로그인"
@@ -71,7 +71,7 @@
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="0dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="회원가입"
