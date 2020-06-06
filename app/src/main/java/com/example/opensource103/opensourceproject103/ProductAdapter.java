@@ -1,5 +1,6 @@
 package com.example.opensource103.opensourceproject103;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,11 +9,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
     ArrayList<ProductModel> items = new ArrayList<>();
+    static Context context;
+
+    public ProductAdapter(Context context) {
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -51,6 +59,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         }
 
         public void setItem(ProductModel item) {
+            String url = "http://"+item.getProductImage();
+            Glide.with(context).load(url).into(imageView);
             title.setText(item.getProductName());
             price.setText(item.getProductPrice() + " 원");
         }

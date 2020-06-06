@@ -38,7 +38,7 @@ public class ProductActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-        ProductAdapter adapter = new ProductAdapter();
+        ProductAdapter adapter = new ProductAdapter(this);
 
         for (int i=0; i<productList.size(); i++) {
             String sid = productList.get(i).get(TAG_SID);
