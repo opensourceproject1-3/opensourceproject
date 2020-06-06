@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -91,11 +92,13 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                 }
             });
 
+            String storeID = item.getStoreID();
             favorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // 즐겨찾기 로컬 db 저장
-
+                    Toast.makeText(v.getContext(), "db 저장", Toast.LENGTH_SHORT).show();
+                    // storeID를 로컬 db에 저장을하면 됨
                 }
             });
 
