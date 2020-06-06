@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         ImageView iv = (ImageView)findViewById(R.id.gif_image);
         Glide.with(this).load(R.raw.intro).into(iv);
 
-        TestStoreReqeust task = new TestStoreReqeust();
+        StoreReqeust task = new StoreReqeust();
         startLoading();
     }
 
@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 6000); //6초
+        }, 3000); //6초
     }
 
 

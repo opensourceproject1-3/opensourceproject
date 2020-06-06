@@ -1,23 +1,23 @@
 package com.example.opensource103.opensourceproject103;
 
 public class StoreModel {
-    int storeID;
+    String storeID;
     String storeName;
     String storeTime;
-    int categoryID;
+    String categoryID;
 
-    public StoreModel(int storeID, String storeName, String storeTime, int categoryID) {
+    public StoreModel(String storeID, String storeName, String storeTime, String categoryID) {
         this.storeID = storeID;
         this.storeName = storeName;
         this.storeTime = storeTime;
         this.categoryID = categoryID;
     }
 
-    public int getStoreID() {
+    public String getStoreID() {
         return storeID;
     }
 
-    public void setStoreID(int storeID) {
+    public void setStoreID(String storeID) {
         this.storeID = storeID;
     }
 
@@ -37,12 +37,11 @@ public class StoreModel {
         this.storeTime = storeTime;
     }
 
-    public int getCategoryID() {
+    public String getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(int categoryID) {
+    public void setCategoryID(String categoryID) {
         this.categoryID = categoryID;
     }
-
 }

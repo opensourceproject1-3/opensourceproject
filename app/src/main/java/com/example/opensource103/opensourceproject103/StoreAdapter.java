@@ -60,6 +60,20 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
             storeImage.setImageResource(R.drawable.mini_logo);
             storeName.setText(item.getStoreName());
             storeTime.setText(item.getStoreTime());
+            String category = item.getCategoryID();
+            if (category.equals("CATEGORY_1")) {
+                storeCategory.setText("축산");
+            } else if (category.equals("CATEGORY_2")) {
+                storeCategory.setText("수산");
+            } else if (category.equals("CATEGORY_3")) {
+                storeCategory.setText("건어물");
+            } else if (category.equals("CATEGORY_4")) {
+                storeCategory.setText("청과");
+            } else if (category.equals("CATEGORY_5")) {
+                storeCategory.setText("견과류");
+            } else if (category.equals("CATEGORY_6")) {
+                storeCategory.setText("먹거리");
+            }
         }
     }
 }

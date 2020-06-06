@@ -39,7 +39,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                intent.putExtra("category", 0);
+                intent.putExtra("category", "CATEGORY_1");
+                intent.putExtra("tab", 0);
                 startActivity(intent);
             }
         });
@@ -47,7 +48,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                intent.putExtra("category", 1);
+                intent.putExtra("category", "CATEGORY_2");
+                intent.putExtra("tab", 1);
                 startActivity(intent);
             }
         });
@@ -55,7 +57,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                intent.putExtra("category", 2);
+                intent.putExtra("category", "CATEGORY_3");
+                intent.putExtra("tab", 2);
                 startActivity(intent);
             }
         });
@@ -63,7 +66,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                intent.putExtra("category", 3);
+                intent.putExtra("category", "CATEGORY_4");
+                intent.putExtra("tab", 3);
                 startActivity(intent);
             }
         });
@@ -71,7 +75,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                intent.putExtra("category", 4);
+                intent.putExtra("category", "CATEGORY_5");
+                intent.putExtra("tab", 4);
                 startActivity(intent);
             }
         });
@@ -79,7 +84,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                intent.putExtra("category", 5);
+                intent.putExtra("category", "CATEGORY_6");
+                intent.putExtra("tab", 5);
                 startActivity(intent);
             }
         });

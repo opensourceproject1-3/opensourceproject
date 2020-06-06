@@ -14,7 +14,8 @@ import java.util.HashMap;
 public class CategoryActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    int category;
+    String category;
+    int select;
 
     RecyclerView recyclerView;
     StoreData data;
@@ -31,14 +32,15 @@ public class CategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category);
 
         Intent intent = getIntent();
-        category = intent.getIntExtra("category", 0);
+        category = intent.getStringExtra("category");
+        select = intent.getIntExtra("tab", 0);
 
         data = StoreData.getData();
         storeList = data.getList();
 
         tabLayout = findViewById(R.id.tabs);
 
-        TabLayout.Tab tab = tabLayout.getTabAt(category);
+        TabLayout.Tab tab = tabLayout.getTabAt(select);
         tab.select();
 
         recyclerView = findViewById(R.id.category_recyclerview);
@@ -48,9 +50,9 @@ public class CategoryActivity extends AppCompatActivity {
         StoreAdapter adapter = new StoreAdapter();
 
         for (int i=0; i<storeList.size(); i++) {
-            int sc = Integer.valueOf(storeList.get(i).get(TAG_CAT));
-            if (sc-1 == category) {
-                int id = Integer.valueOf(storeList.get(i).get(TAG_ID));
+            String sc = storeList.get(i).get(TAG_CAT);
+            if (sc.equals(category)) {
+                String id = storeList.get(i).get(TAG_ID);
                 String sn = storeList.get(i).get(TAG_NAME);
                 String st = storeList.get(i).get(TAG_ADD);
                 adapter.addItem(new StoreModel(id, sn, st, sc));
@@ -62,13 +64,36 @@ public class CategoryActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int category = tab.getPosition();
+                int select = tab.getPosition();
                 StoreAdapter adapter = new StoreAdapter();
 
+                String category = null;
+
+                switch (select) {
+                    case 0:
+                        category = "CATEGORY_1";
+                        break;
+                    case 1:
+                        category = "CATEGORY_2";
+                        break;
+                    case 2:
+                        category = "CATEGORY_3";
+                        break;
+                    case 3:
+                        category = "CATEGORY_4";
+                        break;
+                    case 4:
+                        category = "CATEGORY_5";
+                        break;
+                    case 5:
+                        category = "CATEGORY_6";
+                        break;
+                }
+
                 for (int i=0; i<storeList.size(); i++) {
-                    int sc = Integer.valueOf(storeList.get(i).get(TAG_CAT));
-                    if (sc-1 == category) {
-                        int id = Integer.valueOf(storeList.get(i).get(TAG_ID));
+                    String sc = storeList.get(i).get(TAG_CAT);
+                    if (sc.equals(category)) {
+                        String id = storeList.get(i).get(TAG_ID);
                         String sn = storeList.get(i).get(TAG_NAME);
                         String st = storeList.get(i).get(TAG_ADD);
                         adapter.addItem(new StoreModel(id, sn, st, sc));
