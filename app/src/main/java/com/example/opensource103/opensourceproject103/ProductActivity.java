@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +23,8 @@ public class ProductActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> productList;
     ProductData data;
     String storeID;
+    String store;
+    TextView storeName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,11 @@ public class ProductActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         storeID = intent.getStringExtra("storeID");
+        store = intent.getStringExtra("storeName");
+
+        storeName = findViewById(R.id.product_store_name);
+        storeName.setText(store);
+
 
         data = ProductData.getData();
         productList = data.getList();
