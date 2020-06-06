@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> {
-
+    ImageView iv;
     ArrayList<StoreModel> items = new ArrayList<>();
 
     @NonNull
@@ -53,6 +53,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
         TextView storeCategory;
         ImageView favorite;
         RelativeLayout storeContainer;
+        ImageView favorite_star;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,10 +95,24 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
 
             String storeID = item.getStoreID();
             favorite.setOnClickListener(new View.OnClickListener() {
+
+                int i=0;
                 @Override
                 public void onClick(View v) {
                     // 즐겨찾기 로컬 db 저장
-                    Toast.makeText(v.getContext(), "db 저장", Toast.LENGTH_SHORT).show();
+                    favorite_star = itemView.findViewById(R.id.store_favorite);
+                    i = 1 - i;
+
+                    if ( i == 0 ){
+                        Toast.makeText(v.getContext(), "즐겨찾기 삭제", Toast.LENGTH_SHORT).show();
+                        favorite_star.setImageResource(R.drawable.default_star);
+
+                    }
+                    else{
+                        Toast.makeText(v.getContext(), "즐겨찾기 등록", Toast.LENGTH_SHORT).show();
+                        favorite_star.setImageResource(R.drawable.ic_star_selected);
+
+                    }
                     // storeID를 로컬 db에 저장을하면 됨
                 }
             });
