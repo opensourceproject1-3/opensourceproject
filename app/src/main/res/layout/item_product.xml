@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:text="메뉴 이름"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="23dp"
+            android:fontFamily="@font/font"
             />
 
         <TextView
@@ -25,7 +26,8 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="메뉴 가격" />
+            android:text="메뉴 가격"
+            android:fontFamily="@font/font" />
 
     </LinearLayout>
 
