@@ -7,23 +7,31 @@
     android:orientation="vertical"
     tools:context=".ProductActivity">
 
+
     <TextView
         android:id="@+id/product_store_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:text="가게 이름"
         android:textSize="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:fontFamily="@font/font" />
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
         android:text="대표메뉴"
         android:fontFamily="@font/font"
-        android:textSize="30dp"
-        android:gravity="center" />
+        android:textColor="@android:color/black"
+        android:textSize="25dp"/>
+
 
     <LinearLayout
         android:layout_below="@+id/imageView2"
@@ -33,6 +41,13 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:background="#888888"/>
+
+
+
+
+
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/menu_recyclerview"
