@@ -13,12 +13,17 @@
 
         <TextView
             android:id="@+id/category_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:fontFamily="@font/font"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
             android:text="카테고리"
-            android:textSize="30dp" />
+            android:fontFamily="@font/batang_bold"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+
 
     </RelativeLayout>
 

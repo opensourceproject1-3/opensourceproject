@@ -3,12 +3,12 @@ package com.example.opensource103.opensourceproject103;
 public class MarketModel {
     private int resId;
     private String title;
-    private String content;
+    private String number;
 
-    MarketModel(int resId, String title, String content) {
+    MarketModel(int resId, String title,String number) {
         this.resId = resId;
         this.title = title;
-        this.content = content;
+        this.number = number;
     }
 
     public int getResId() {
@@ -27,11 +27,10 @@ public class MarketModel {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getNumber() {
+        return number;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+    public void setNumber(String number) { this.number = number; }
+
 }

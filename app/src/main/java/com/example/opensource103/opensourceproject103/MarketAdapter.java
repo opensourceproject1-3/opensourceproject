@@ -50,21 +50,21 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView title;
-        TextView contents;
+        TextView number;
         Button button;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.market_image);
             title = itemView.findViewById(R.id.text_title);
-            contents = itemView.findViewById(R.id.text_content);
+            number = itemView.findViewById(R.id.text_number);
             button = itemView.findViewById(R.id.watch_map);
         }
 
         public void setItem(MarketModel item) {
             imageView.setImageResource(item.getResId());
             title.setText(item.getTitle());
-            contents.setText(item.getContent());
+            number.setText(item.getNumber());
         }
     }
 }
