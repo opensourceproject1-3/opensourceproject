@@ -64,6 +64,9 @@ public class FavoritesFragment extends Fragment {
         if (isFavorite) {
             imageView.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
         }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false);
