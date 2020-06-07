@@ -9,7 +9,11 @@
         android:id="@+id/store_image"
         android:src="@drawable/mini_logo"
         android:layout_width="80dp"
-        android:layout_height="80dp" />
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        />
+
 
     <LinearLayout
         android:id="@+id/store_contents"
@@ -17,7 +21,11 @@
         android:layout_toLeftOf="@+id/store_favorite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <TextView
@@ -26,7 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="이름"
-            android:textSize="20dp" />
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:fontFamily="@font/font"/>
 
         <LinearLayout
             android:layout_marginTop="5dp"
@@ -37,6 +47,8 @@
                 android:id="@+id/store_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:textSize="16dp"
                 android:text="운영시간"/>
 
             <TextView
@@ -44,6 +56,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
+                android:fontFamily="@font/font"
+                android:textSize="16dp"
                 android:text="카테고리"/>
 
         </LinearLayout>
@@ -53,10 +67,10 @@
         android:id="@+id/store_favorite"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="20dp"
         android:src="@drawable/star_unselected"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
 
     <LinearLayout
         android:layout_below="@+id/store_contents"
