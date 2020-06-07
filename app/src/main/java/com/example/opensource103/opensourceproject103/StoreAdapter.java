@@ -1,6 +1,8 @@
 package com.example.opensource103.opensourceproject103;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -15,8 +17,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> {
-    ImageView iv;
     ArrayList<StoreModel> items = new ArrayList<>();
+    static SharedPreferences sf;
+    static SharedPreferences.Editor editor;
 
     @NonNull
     @Override
@@ -53,7 +56,6 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
         TextView storeCategory;
         ImageView favorite;
         RelativeLayout storeContainer;
-        ImageView favorite_star;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -93,27 +95,17 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                 }
             });
 
-            String storeID = item.getStoreID();
+            final String storeID = item.getStoreID();
             favorite.setOnClickListener(new View.OnClickListener() {
-
-                int i=0;
                 @Override
                 public void onClick(View v) {
                     // 즐겨찾기 로컬 db 저장
-                    favorite_star = itemView.findViewById(R.id.store_favorite);
-                    i = 1 - i;
-
-                    if ( i == 0 ){
-                        Toast.makeText(v.getContext(), "즐겨찾기 삭제", Toast.LENGTH_SHORT).show();
-                        favorite_star.setImageResource(R.drawable.default_star);
-
-                    }
-                    else{
-                        Toast.makeText(v.getContext(), "즐겨찾기 등록", Toast.LENGTH_SHORT).show();
-                        favorite_star.setImageResource(R.drawable.ic_star_selected);
-
-                    }
+                    Toast.makeText(v.getContext(), storeID, Toast.LENGTH_SHORT).show();
                     // storeID를 로컬 db에 저장을하면 됨
+                    sf = v.getContext().getSharedPreferences("favoriteFile", Context.MODE_PRIVATE);
+                    editor = sf.edit();
+                    editor.putString(storeID, storeID);
+                    editor.commit();
                 }
             });
 
