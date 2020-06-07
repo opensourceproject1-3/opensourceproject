@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,16 +97,32 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
             });
 
             final String storeID = item.getStoreID();
+
             favorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // 즐겨찾기 로컬 db 저장
-                    Toast.makeText(v.getContext(), storeID, Toast.LENGTH_SHORT).show();
                     // storeID를 로컬 db에 저장을하면 됨
                     sf = v.getContext().getSharedPreferences("favoriteFile", Context.MODE_PRIVATE);
+
+                    String key = sf.getString(storeID, null);
+
+                    if (key != null )
+                        Log.d("StoreAdapter", key);
                     editor = sf.edit();
-                    editor.putString(storeID, storeID);
-                    editor.commit();
+
+                    if (key == null) {
+                        editor.putString(storeID, storeID);
+                        editor.commit();
+                        favorite.setImageResource(R.drawable.star_selected);
+                        // 즐겨찾기 로컬 db 저장
+                        Toast.makeText(v.getContext(), "즐겨찾기 등록!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // key가 존재한다면 삭제
+                        editor.remove(key);
+                        editor.commit();
+                        favorite.setImageResource(R.drawable.star_unselected);
+                        Toast.makeText(v.getContext(), "즐겨찾기 삭제!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
