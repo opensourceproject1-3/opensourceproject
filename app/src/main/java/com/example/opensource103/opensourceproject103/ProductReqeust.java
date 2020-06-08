@@ -23,6 +23,7 @@ public class ProductReqeust {
     private static final String TAG_IMG = "productImage";
     private static final String TAG_SID = "storeID";
     private static final String TAG_CID = "categoryID";
+    private static final String TAG_UNIT = "productUnit";
 
     JSONArray peoples = null;
 
@@ -46,6 +47,7 @@ public class ProductReqeust {
                 String imageUrl = c.getString(TAG_IMG);
                 String storeId = c.getString(TAG_SID);
                 String category = c.getString(TAG_CID);
+                String unit = c.getString(TAG_UNIT);
 
                 HashMap<String, String> persons = new HashMap<>();
 
@@ -55,6 +57,7 @@ public class ProductReqeust {
                 persons.put(TAG_IMG, imageUrl);
                 persons.put(TAG_SID, storeId);
                 persons.put(TAG_CID, category);
+                persons.put(TAG_UNIT, unit);
                 personList.add(persons);
             }
 

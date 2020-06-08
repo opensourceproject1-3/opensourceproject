@@ -1,5 +1,6 @@
 package com.example.opensource103.opensourceproject103;
 
+import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> {
@@ -97,6 +99,9 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
             });
 
             final String storeID = item.getStoreID();
+            if (item.check) {
+                favorite.setImageResource(R.drawable.star_selected);
+            }
 
             favorite.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -116,16 +121,20 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                         favorite.setImageResource(R.drawable.star_selected);
                         // 즐겨찾기 로컬 db 저장
                         Toast.makeText(v.getContext(), "즐겨찾기 등록!", Toast.LENGTH_SHORT).show();
+
+
                     } else {
                         // key가 존재한다면 삭제
                         editor.remove(key);
                         editor.commit();
                         favorite.setImageResource(R.drawable.star_unselected);
                         Toast.makeText(v.getContext(), "즐겨찾기 삭제!", Toast.LENGTH_SHORT).show();
+
                     }
                 }
             });
 
         }
     }
+
 }

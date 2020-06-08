@@ -7,14 +7,24 @@ public class ProductModel {
     String productImage;
     String storeID;
     String categoryID;
+    String unit;
 
-    public ProductModel(String productID, String productName, int productPrice, String productImage, String storeID, String categoryID) {
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public ProductModel(String productID, String productName, int productPrice, String productImage, String storeID, String categoryID, String unit) {
         this.productID = productID;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productImage = productImage;
         this.storeID = storeID;
         this.categoryID = categoryID;
+        this.unit = unit;
     }
 
     public String getProductID() {

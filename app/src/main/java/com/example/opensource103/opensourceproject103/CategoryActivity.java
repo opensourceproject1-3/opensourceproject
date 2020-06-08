@@ -1,6 +1,8 @@
 package com.example.opensource103.opensourceproject103;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ public class CategoryActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     StoreData data;
     ArrayList<HashMap<String, String>> storeList;
+    SharedPreferences sf;
 
     private static final String TAG_ID = "storeID";
     private static final String TAG_NAME = "storeName";
@@ -34,6 +37,8 @@ public class CategoryActivity extends AppCompatActivity {
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
         select = intent.getIntExtra("tab", 0);
+
+        sf = getSharedPreferences("favoriteFile", MODE_PRIVATE);
 
         data = StoreData.getData();
         storeList = data.getList();
@@ -53,9 +58,14 @@ public class CategoryActivity extends AppCompatActivity {
             String sc = storeList.get(i).get(TAG_CAT);
             if (sc.equals(category)) {
                 String id = storeList.get(i).get(TAG_ID);
+                String is = sf.getString(id, null);
                 String sn = storeList.get(i).get(TAG_NAME);
                 String st = storeList.get(i).get(TAG_ADD);
-                adapter.addItem(new StoreModel(id, sn, st, sc));
+                StoreModel sm = new StoreModel(id, sn, st, sc);
+                if (is != null) {
+                    sm.check = true;
+                }
+                adapter.addItem(sm);
             }
         }
 
@@ -94,9 +104,14 @@ public class CategoryActivity extends AppCompatActivity {
                     String sc = storeList.get(i).get(TAG_CAT);
                     if (sc.equals(category)) {
                         String id = storeList.get(i).get(TAG_ID);
+                        String is = sf.getString(id, null);
                         String sn = storeList.get(i).get(TAG_NAME);
                         String st = storeList.get(i).get(TAG_ADD);
-                        adapter.addItem(new StoreModel(id, sn, st, sc));
+                        StoreModel sm = new StoreModel(id, sn, st, sc);
+                        if (is != null) {
+                            sm.check = true;
+                        }
+                        adapter.addItem(sm);
                     }
                 }
 

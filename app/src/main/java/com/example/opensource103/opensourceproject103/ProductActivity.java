@@ -18,6 +18,7 @@ public class ProductActivity extends AppCompatActivity {
     private static final String TAG_IMG = "productImage";
     private static final String TAG_SID = "storeID";
     private static final String TAG_CID = "categoryID";
+    private static final String TAG_UNIT = "productUnit";
 
     RecyclerView recyclerView;
     ArrayList<HashMap<String, String>> productList;
@@ -38,7 +39,6 @@ public class ProductActivity extends AppCompatActivity {
         storeName = findViewById(R.id.product_store_name);
         storeName.setText(store);
 
-
         data = ProductData.getData();
         productList = data.getList();
 
@@ -56,7 +56,8 @@ public class ProductActivity extends AppCompatActivity {
                 int price = Integer.parseInt(productList.get(i).get(TAG_PRICE));
                 String img = productList.get(i).get(TAG_IMG);
                 String category = productList.get(i).get(TAG_CID);
-                adapter.addItem(new ProductModel(id, name, price, img, sid, category));
+                String unit = productList.get(i).get(TAG_UNIT);
+                adapter.addItem(new ProductModel(id, name, price, img, sid, category, unit));
             }
         }
 
