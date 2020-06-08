@@ -53,8 +53,6 @@ public class LoginActivity extends AppCompatActivity {
                 String userID = et_id.getText().toString();
                 String userPass = et_pass.getText().toString();
 
-
-
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -69,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),"직지장터 로그인에 성공하셨습니다.",Toast.LENGTH_SHORT).show();
 
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
                                 intent.putExtra("userID",userID);
                                 intent.putExtra("userPass",userPass);

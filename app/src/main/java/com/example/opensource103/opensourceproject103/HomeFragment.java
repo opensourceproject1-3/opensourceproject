@@ -41,6 +41,7 @@ public class HomeFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
                 intent.putExtra("category", "CATEGORY_1");
                 intent.putExtra("tab", 0);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -50,6 +51,7 @@ public class HomeFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
                 intent.putExtra("category", "CATEGORY_2");
                 intent.putExtra("tab", 1);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -59,6 +61,7 @@ public class HomeFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
                 intent.putExtra("category", "CATEGORY_3");
                 intent.putExtra("tab", 2);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -68,6 +71,7 @@ public class HomeFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
                 intent.putExtra("category", "CATEGORY_4");
                 intent.putExtra("tab", 3);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -77,6 +81,7 @@ public class HomeFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
                 intent.putExtra("category", "CATEGORY_5");
                 intent.putExtra("tab", 4);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -86,6 +91,7 @@ public class HomeFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
                 intent.putExtra("category", "CATEGORY_6");
                 intent.putExtra("tab", 5);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -95,6 +101,7 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), SurroundingMarket.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -104,6 +111,7 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Notice.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });

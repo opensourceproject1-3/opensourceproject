@@ -1,5 +1,7 @@
 package com.example.opensource103.opensourceproject103;
 
+import android.app.Application;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
