@@ -5,27 +5,27 @@
 
 ## 200608 진행사항
 
-![screenshot](./readmeimg/final (1).png)
+![screenshot](./readmeimg/final(1).png)
 
-![screenshot](./readmeimg/final (2).png)
+![screenshot](./readmeimg/final(2).png)
 
-![screenshot](./readmeimg/final (3).png)
+![screenshot](./readmeimg/final(3).png)
 
-![screenshot](./readmeimg/final (4).png)
+![screenshot](./readmeimg/final(4).png)
 
-![screenshot](./readmeimg/final (5).png)
+![screenshot](./readmeimg/final(5).png)
 
-![screenshot](./readmeimg/final (6).png)
+![screenshot](./readmeimg/final(6).png)
 
-![screenshot](./readmeimg/final (7).png)
+![screenshot](./readmeimg/final(7).png)
 
-![screenshot](./readmeimg/final (8).png)
+![screenshot](./readmeimg/final(8).png)
 
-![screenshot](./readmeimg/final (9).png)
+![screenshot](./readmeimg/final(9).png)
 
-![screenshot](./readmeimg/final (10).png)
+![screenshot](./readmeimg/final(10).png)
 
-![screenshot](./readmeimg/final (11).png)
+![screenshot](./readmeimg/final(11).png)
 
 
 ## 200604 진행사항
