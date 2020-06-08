@@ -50,12 +50,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         ImageView imageView;
         TextView title;
         TextView price;
+        TextView unit;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.menu_image);
             title = itemView.findViewById(R.id.menu_title);
             price = itemView.findViewById(R.id.menu_price);
+            unit = itemView.findViewById(R.id.menu_unit);
         }
 
         public void setItem(ProductModel item) {
@@ -63,6 +65,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             Glide.with(context).load(url).into(imageView);
             title.setText(item.getProductName());
             price.setText(item.getProductPrice() + " 원");
+            unit.setText(item.getUnit());
         }
     }
 

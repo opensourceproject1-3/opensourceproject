@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,17 +29,19 @@ public class FavoritesFragment extends Fragment {
 
     SharedPreferences sf;
     StoreData data;
-    boolean isFavorite = false;
+    boolean isFavorite;
     ArrayList<HashMap<String, String>> storeList;
     List<String> storeIDList;
+    StoreAdapter adapter;
 
     RecyclerView recyclerView;
     ImageView imageView;
 
+
     public FavoritesFragment() {
         // Required empty public constructor
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +51,7 @@ public class FavoritesFragment extends Fragment {
         data = StoreData.getData();
         storeList = data.getList();
         storeIDList = new ArrayList<>();
-
+        isFavorite = false;
         imageView = rootView.findViewById(R.id.no_favorites);
         recyclerView = rootView.findViewById(R.id.favorites_recyclerview);
 
@@ -71,7 +74,7 @@ public class FavoritesFragment extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        StoreAdapter adapter = new StoreAdapter();
+        adapter = new StoreAdapter();
 
         int index = 0;
         for (int i=0; i<storeList.size(); i++) {
@@ -81,13 +84,19 @@ public class FavoritesFragment extends Fragment {
                     String sc = storeList.get(i).get(TAG_CAT);
                     String sn = storeList.get(i).get(TAG_NAME);
                     String st = storeList.get(i).get(TAG_ADD);
-                    adapter.addItem(new StoreModel(key, sn, st, sc));
+                    String is = sf.getString(key, null);
+                    StoreModel sm = new StoreModel(key, sn, st, sc);
+                    if (is != null) {
+                        sm.check = true;
+                    }
+                    adapter.addItem(sm);
                     index++;
                 }
             }
         }
 
         recyclerView.setAdapter(adapter);
+
         // Inflate the layout for this fragment
         return rootView;
     }

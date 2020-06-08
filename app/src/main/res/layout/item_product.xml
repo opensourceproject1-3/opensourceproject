@@ -28,7 +28,17 @@
             android:layout_height="wrap_content"
             android:text="메뉴 가격"
             android:fontFamily="@font/font"
+            android:textColor="#ff0000"
             android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/menu_unit"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메뉴 단위"
+            android:fontFamily="@font/font"
+            android:textSize="13dp"/>
 
     </LinearLayout>
 

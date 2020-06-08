@@ -5,6 +5,7 @@ public class StoreModel {
     String storeName;
     String storeTime;
     String categoryID;
+    boolean check;
 
     public StoreModel(String storeID, String storeName, String storeTime, String categoryID) {
         this.storeID = storeID;
