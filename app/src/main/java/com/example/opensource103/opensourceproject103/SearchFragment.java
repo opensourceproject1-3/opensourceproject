@@ -57,7 +57,7 @@ public class SearchFragment extends Fragment {
         // 가게명 검색
         for (int i=0; i<storeList.size(); i++) {
             String name = storeList.get(i).get(TAG_NAME);
-            if (name.equals(key.getText().toString())) {
+            if (name.contains(key.getText().toString())) {
                 String id = storeList.get(i).get(TAG_ID);
                 String category = storeList.get(i).get(TAG_CAT);
                 String time = storeList.get(i).get(TAG_ADD);
