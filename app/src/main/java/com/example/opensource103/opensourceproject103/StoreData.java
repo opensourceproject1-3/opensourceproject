@@ -1,10 +1,12 @@
 package com.example.opensource103.opensourceproject103;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StoreData {
-    private static StoreData data = new StoreData();
+    private static StoreData data = null;
 
     ArrayList<HashMap<String, String>> personList;
 
@@ -13,7 +15,10 @@ public class StoreData {
     }
 
     public static StoreData getData() {
-        if (data == null) data = new StoreData();
+        if (data == null) {
+            data = new StoreData();
+            Log.d("TTT", "storedata 생성");
+        }
         return data;
     }
 
@@ -23,6 +28,8 @@ public class StoreData {
 
     public void setList(ArrayList<HashMap<String, String>> list) {
         personList = list;
+        Log.d("TTT", personList.size()+"");
+
     }
 
 }

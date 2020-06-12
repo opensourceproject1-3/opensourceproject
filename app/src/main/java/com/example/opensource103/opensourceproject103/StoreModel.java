@@ -5,13 +5,23 @@ public class StoreModel {
     String storeName;
     String storeTime;
     String categoryID;
+    String imageUrl;
     boolean check;
 
-    public StoreModel(String storeID, String storeName, String storeTime, String categoryID) {
+    public StoreModel(String storeID, String storeName, String storeTime, String categoryID, String url) {
         this.storeID = storeID;
         this.storeName = storeName;
         this.storeTime = storeTime;
         this.categoryID = categoryID;
+        this.imageUrl = url;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getStoreID() {
