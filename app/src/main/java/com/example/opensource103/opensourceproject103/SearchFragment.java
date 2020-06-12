@@ -20,6 +20,7 @@ public class SearchFragment extends Fragment {
     private static final String TAG_NAME = "storeName";
     private static final String TAG_ADD = "storeTime";
     private static final String TAG_CAT = "categoryID";
+    private static final String TAG_IMG = "storeImage";
 
     RecyclerView recyclerView;
     StoreAdapter storeAdapter;
@@ -43,7 +44,7 @@ public class SearchFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storeAdapter = new StoreAdapter();
+                storeAdapter = new StoreAdapter(getContext());
                 setData();
                 recyclerView.setAdapter(storeAdapter);
             }
@@ -60,7 +61,8 @@ public class SearchFragment extends Fragment {
                 String id = storeList.get(i).get(TAG_ID);
                 String category = storeList.get(i).get(TAG_CAT);
                 String time = storeList.get(i).get(TAG_ADD);
-                storeAdapter.addItem(new StoreModel(id, name, time, category));
+                String url = storeList.get(i).get(TAG_IMG);
+                storeAdapter.addItem(new StoreModel(id, name, time, category, url));
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.example.opensource103.opensourceproject103;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +22,8 @@ public class StoreReqeust {
     private static final String TAG_NAME = "storeName";
     private static final String TAG_ADD = "storeTime";
     private static final String TAG_CAT = "categoryID";
+    private static final String TAG_IMG = "storeImage";
+
 
     JSONArray peoples = null;
 
@@ -42,6 +45,7 @@ public class StoreReqeust {
                 String name = c.getString(TAG_NAME);
                 String address = c.getString(TAG_ADD);
                 String category = c.getString(TAG_CAT);
+                String imageUrl = c.getString(TAG_IMG);
 
                 HashMap<String, String> persons = new HashMap<>();
 
@@ -49,6 +53,7 @@ public class StoreReqeust {
                 persons.put(TAG_NAME, name);
                 persons.put(TAG_ADD, address);
                 persons.put(TAG_CAT, category);
+                persons.put(TAG_IMG, imageUrl);
                 personList.add(persons);
             }
 

@@ -26,6 +26,7 @@ public class FavoritesFragment extends Fragment {
     private static final String TAG_NAME = "storeName";
     private static final String TAG_ADD = "storeTime";
     private static final String TAG_CAT = "categoryID";
+    private static final String TAG_IMG = "storeImage";
 
     SharedPreferences sf;
     StoreData data;
@@ -74,7 +75,7 @@ public class FavoritesFragment extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new StoreAdapter();
+        adapter = new StoreAdapter(getContext());
 
         int index = 0;
         for (int i=0; i<storeList.size(); i++) {
@@ -85,7 +86,8 @@ public class FavoritesFragment extends Fragment {
                     String sn = storeList.get(i).get(TAG_NAME);
                     String st = storeList.get(i).get(TAG_ADD);
                     String is = sf.getString(key, null);
-                    StoreModel sm = new StoreModel(key, sn, st, sc);
+                    String url = storeList.get(i).get(TAG_IMG);
+                    StoreModel sm = new StoreModel(key, sn, st, sc, url);
                     if (is != null) {
                         sm.check = true;
                     }

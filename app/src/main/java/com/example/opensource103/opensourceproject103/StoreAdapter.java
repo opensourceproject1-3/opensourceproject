@@ -16,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 
@@ -23,6 +25,12 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
     ArrayList<StoreModel> items = new ArrayList<>();
     static SharedPreferences sf;
     static SharedPreferences.Editor editor;
+
+    static Context context;
+
+    public StoreAdapter(Context context) {
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -71,7 +79,10 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
         }
 
         public void setItem(final StoreModel item) {
-            storeImage.setImageResource(R.drawable.store);
+            String url = "http://"+item.getImageUrl();
+            Glide.with(context).load(url).into(storeImage);
+
+            // storeImage.setImageResource(R.drawable.store);
             storeName.setText(item.getStoreName());
             storeTime.setText("영업시간: " + item.getStoreTime());
             String category = item.getCategoryID();
@@ -94,6 +105,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                     Intent intent = new Intent(v.getContext(), ProductActivity.class);
                     intent.putExtra("storeID", item.getStoreID());
                     intent.putExtra("storeName", item.getStoreName());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     v.getContext().startActivity(intent);
                 }
             });
